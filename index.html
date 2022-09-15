@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Continuous Vertical scrolling - fullPage.js</title>
+	<meta name="author" content="Matthew Howell" />
+	<meta name="description" content="fullPage continuous scrolling demo." />
+	<meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+
+    <!-- gshap 애니메이션 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js" integrity="sha512-lZACdYsy0W98dOcn+QRNHDxFuhm62lfs8qK5+wPp7X358CN3f+ml49HpnwzTiXFzETs4++fADePDI+L2zwlm7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			var console = { log: function() {} };
+		</script>
+	<![endif]-->
+</head>
+<body>
+
+<ul id="menu">
+	<li data-menuanchor="firstPage" class="active"><a href="#firstPage"><img src="./img/profile.png" alt="profile"></a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage"><img src="./img/starbucks.png" alt="starbucks"></a></li>
+	<li data-menuanchor="3rdPage"><a href="#3rdPage"><img src="./img/tamburins.png" alt="tamburins"></a></li>
+</ul>
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<h1><img src="./img/kimsonghee.png" alt="kimsonghee"></h1>
+		<address>blockbs2hee@gmail.com</address>
+        <hr>
+        <span>학력</span>
+		<p>
+            포항동지여자고등학교 졸업<br>
+        </p>
+        <span>자격증</span>
+        <p>
+            ITQ 한글 A<br>
+            ITQ 엑셀 A<br>
+            ITQ 파워포인트 A<br>
+            전산회계 2급<br>
+        </p>
+        <span>경력사항</span>
+        <p>
+            잇츠윈  2018. 02. 01 ~ 2020. 02. 28<br>
+            서울바이오시스  2020. 03. 01 ~ 2022. 02. 28<br>
+        </p>
+        <span>교육이력</span>
+        <p>
+            안산그린컴퓨터아카데미 2022. 05. 09 ~ 2022. 09. 23<br>
+        </p>
+        <span>Skill</span>
+        <p>
+            HTML 中<br>
+            CSS 中<br>
+            Jacascript 中<br>
+            PS 上<br>
+            AI 中
+        </p>
+        <a href="https://github.com/solsong"><img src="./img/gitbtn.png" alt="gitbtn" ></a>
+	</div>
+	<div class="section" id="section1">
+		<div class="intro">
+			<h1><img src="./img/starbucks.png" alt="starbucks" class="imgjs"></h1>
+			<a href="https://solsong.github.io/starsonghee/"><img src="./img/starbuckscap.png" alt="starbuckscap" class="starbucks"></a>
+			<p>제작기간 일주일 HTML CSS Jacascript 사용</p>
+            <p>
+                4. 사용폰트 : 나눔고딕<br>
+                5. lodash를 활용하여 scroll함수 제어<br>
+                6. gsap을 이용해 애니메이션 효과<br>
+                7. Youtube API<br>
+                8. ScrollMagic<br>
+                9. Swiper Slider
+            </p>
+		</div>
+	</div>
+	<div class="section" id="section2">
+		<div class="intro">
+			<h1><img src="./img/tamburins.png" alt="tamburins" class="imgjs"></h1>
+			<a href="https://solsong.github.io/newtam/"><img src="./img/tmacap.png" alt="tmacap" class="tamburins"></a>
+            <p>제작기간 일주일 HTML CSS Jacascript 사용</p>
+            <p>
+                1. 사용폰트 : 마루부리<br>
+                2. gsap을 이용해 애니메이션 효과<br>
+                3. ScrollMagic<br>
+                4. youtube<br>
+                5. swiper slider<br>
+                6. 반응형 홈페이지
+            </p>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="../dist/fullpage.js"></script>
+<script type="text/javascript" src="examples.js"></script>
+<script src="./index.js"></script>
+
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+      sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+      anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+      menu: '#menu',
+      continuousVertical: true,
+      navigation: true,
+      afterLoad: function(origin, destination, direction, trigger){
+        console.log("afterLoad: destination:" + destination.index);
+      },
+      onLeave: function(origin, destination, direction, trigger){
+        console.log("onLeave: destination:" + destination.index);
+      },
+    });
+</script>
+
+</body>
+</html>
