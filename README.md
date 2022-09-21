@@ -15,9 +15,28 @@
 }
 
 ```
-### 2. full fage (https://github.com/alvarotrigo/fullPage.js)
+### 2. 주조컬러
+```section1 #000 ~ #fff
+section2 rgb(21, 82, 9) ~ #fff
+section3 #705328 ~ #fff
+text color #fff 통일
+```
+```css
+#section0{
+	background-image: linear-gradient(128deg,#000,#fff);
+}
 
-### 3. 이미지 효과
+#section1{
+	background-image: linear-gradient(128deg,rgb(21, 82, 9),#fff);
+}
+
+#section2{
+	background-image: linear-gradient(128deg,#705328,#fff);
+}
+```
+### 3. full fage (https://github.com/alvarotrigo/fullPage.js)
+
+### 4. 이미지 효과
 
 ```js
 function random(min, max) {
