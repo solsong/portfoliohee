@@ -60,6 +60,11 @@ q:before,q:after {
 abbr,acronym { border: 0;
 }
 
+.section p{padding-bottom: 5px;}
+
+#menu li{width: 300px;}
+#menu li img{height: 20px; width: 200px;}
+#menu li img:nth-child(1){height: 30px;}
 
 /* Custom CSS
  * --------------------------------------- */
@@ -81,7 +86,8 @@ h1 img{
 .starbucks{width: 50%;}
 .tamburins{width: 50%;}
 address:hover{color: #333;}
-#section0 a img{width: 50px; padding-top: 10px; transition: all 0.3s;}
+#section0 a img{width: 80px; transition: all 0.3s; position: absolute;
+right: 50px; bottom: 30px;}
 #section0 a img:hover{opacity: 0.5;}
 #section2 .intro p{width: 100%;}
 #section1 .intro h1{width: 50%;}
